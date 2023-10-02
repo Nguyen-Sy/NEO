@@ -1,0 +1,116 @@
+{
+    "name": "InzPos",
+    "groups": [],
+    "features": {},
+    "supportedstandards": ["NEP-17"],
+    "abi": {
+        "methods": [
+            {
+                "name": "Transfer Token",
+                "offset": 12,
+                "safe": false,
+                "returntype": "Boolean",
+                "parameters": [
+                    { "name": "from", "type": "Hash160" },
+                    { "name": "to", "type": "Hash160" },
+                    { "name": "value", "type": "Integer" }
+                ]
+            },
+            {
+                "name": "Withdraw Token",
+                "offset": 475,
+                "safe": false,
+                "returntype": "Boolean",
+                "parameters": [
+                    { "name": "from", "type": "Hash160" },
+                    { "name": "value", "type": "Integer" }
+                ]
+            },
+            {
+                "name": "Deposit Token",
+                "offset": 611,
+                "safe": false,
+                "returntype": "Boolean",
+                "parameters": [
+                    { "name": "to", "type": "Hash160" },
+                    { "name": "value", "type": "Integer" },
+                    { "name": "callbackData", "type": "Any" }
+                ]
+            },
+            {
+                "name": "Pause Contract",
+                "offset": 804,
+                "safe": false,
+                "returntype": "Boolean",
+                "parameters": []
+            },
+            {
+                "name": "Unpause Contract",
+                "offset": 847,
+                "safe": false,
+                "returntype": "Boolean",
+                "parameters": []
+            },
+            {
+                "name": "Update Contract",
+                "offset": 910,
+                "safe": false,
+                "returntype": "Void",
+                "parameters": [
+                    { "name": "nefFile", "type": "ByteArray" },
+                    { "name": "manifest", "type": "String" }
+                ]
+            },
+            {
+                "name": "Set ScriptHash",
+                "offset": 988,
+                "safe": false,
+                "returntype": "Void",
+                "parameters": [{ "name": "address", "type": "Hash160" }]
+            },
+            {
+                "name": "_deploy",
+                "offset": 1165,
+                "safe": false,
+                "returntype": "Void",
+                "parameters": [
+                    { "name": "_", "type": "Any" },
+                    { "name": "update", "type": "Boolean" }
+                ]
+            }
+        ],
+        "events": [
+            {
+                "name": "OnWithdraw",
+                "parameters": [
+                    { "name": "toAddress", "type": "Hash160" },
+                    { "name": "amount", "type": "Integer" }
+                ]
+            },
+            {
+                "name": "OnDeposit",
+                "parameters": [
+                    { "name": "fromADdress", "type": "Hash160" },
+                    { "name": "tokenAddress", "type": "Hash160" },
+                    { "name": "amount", "type": "Integer" },
+                    { "name": "callBackData", "type": "Any" }
+                ]
+            },
+            {
+                "name": "OnTransfer",
+                "parameters": [
+                    { "name": "toAddress", "type": "Hash160" },
+                    { "name": "tokenAddress", "type": "Hash160" },
+                    { "name": "amount", "type": "Integer" }
+                ]
+            }
+        ]
+    },
+    "permissions": [{ "contract": "*", "methods": "*" }],
+    "trusts": [],
+    "extra": {
+        "Author": "SyNt",
+        "Email": "synguyentien.work@gmail.com",
+        "Description": "InZPos contract"
+    }
+}
